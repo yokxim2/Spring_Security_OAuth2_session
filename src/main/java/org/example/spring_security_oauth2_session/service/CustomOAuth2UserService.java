@@ -1,5 +1,6 @@
 package org.example.spring_security_oauth2_session.service;
 
+import org.example.spring_security_oauth2_session.dto.CustomOAuth2User;
 import org.example.spring_security_oauth2_session.dto.GoogleReponse;
 import org.example.spring_security_oauth2_session.dto.NaverResponse;
 import org.example.spring_security_oauth2_session.dto.OAuth2Response;
@@ -34,7 +35,8 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
             return null;
         }
 
+        String role = "ROLE_USER";
 
-        //추후 작성
+        return new CustomOAuth2User(oAuth2Response, role);
     }
 }
